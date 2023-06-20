@@ -1,0 +1,13 @@
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.exe.config
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.exe
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.pdb
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.csproj.AssemblyReference.cache
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.csproj.CoreCompileInputs.cache
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.exe
+D:\UDS_pr\Easyapotheke\Consoles\CopyFirmaConsApp\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.pdb
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.exe.config
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.exe
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\bin\Debug\ConsoleForTestingSomething.pdb
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.csproj.CoreCompileInputs.cache
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.exe
+D:\UDS_pr\Easyapotheke\repos\Consoles\ConsoleForTestingSomething\obj\Debug\ConsoleForTestingSomething.pdb
