@@ -1,0 +1,118 @@
+Gallery1 Properties:
+1. Items:
+
+Sort(
+    ShowColumns(
+        Filter(
+            'Art der Marketingaktivität',
+            Status = 0
+        ),
+        "bit_name",
+        "bit_marketingactivitytypeid",
+        "bit_startdate"
+    ),
+    bit_name,
+    SortOrder.Ascending
+)
+
+
+
+
+
+
+
+StartDate (label) Properties:
+1. Text: Year(ThisItem.bit_startdate)
+
+
+
+
+
+
+
+
+
+
+Toggle Properties:
+1. Checked: 
+
+If(
+    IsBlank(
+        LookUp(
+            Sort(
+                'Marketingaktivitäten der Firma',
+                Startdatum,
+                SortOrder.Descending
+            ),
+            'Art der Marketingaktivität'.'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid && Firmen.Firma = GUID(Param("recordId")) && Startdatum = ThisItem.bit_startdate
+        ).'Art der Marketingaktivität'
+    ),
+    false,
+    LookUp(
+        Sort(
+            'Marketingaktivitäten der Firma',
+            Startdatum,
+            SortOrder.Descending
+        ),
+        'Art der Marketingaktivität'.'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid && Firmen.Firma = GUID(Param("recordId")) && Startdatum = ThisItem.bit_startdate
+    ).Aktiv
+)
+
+2. OnCheck:
+
+If(
+    IsBlank(
+        LookUp(
+            Sort(
+                'Marketingaktivitäten der Firma',
+                Startdatum,
+                SortOrder.Descending
+            ),
+            'Art der Marketingaktivität'.'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid && Firmen.Firma = GUID(Param("recordId")) && Startdatum = ThisItem.bit_startdate
+        )
+    ),
+    Patch(
+        'Marketingaktivitäten der Firma',
+        Defaults('Marketingaktivitäten der Firma'),
+        {
+            'Art der Marketingaktivität': LookUp(
+                'Art der Marketingaktivität',
+                'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid
+            ),
+            Firmen: LookUp(
+                Firmen,
+                Firma = GUID(Param("recordId"))
+            ),
+            Aktiv: true
+        }
+    ),
+    Patch(
+        'Marketingaktivitäten der Firma',
+        LookUp(
+            Sort(
+                'Marketingaktivitäten der Firma',
+                Startdatum,
+                SortOrder.Descending
+            ),
+            'Art der Marketingaktivität'.'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid && Firmen.Firma = GUID(Param("recordId")) && Startdatum = ThisItem.bit_startdate
+        ),
+        {Aktiv: true}
+    )
+);
+Refresh('Art der Marketingaktivität')
+
+3. OnUnCheck:
+
+Patch(
+    'Marketingaktivitäten der Firma',
+    LookUp(
+        Sort(
+            'Marketingaktivitäten der Firma',
+            Startdatum,
+            SortOrder.Descending
+        ),
+        'Art der Marketingaktivität'.'Art der Marketingaktivität' = ThisItem.bit_marketingactivitytypeid && Firmen.Firma = GUID(Param("recordId")) && Startdatum = ThisItem.bit_startdate
+    ),
+    {Aktiv: false}
+);
+Refresh('Art der Marketingaktivität')
